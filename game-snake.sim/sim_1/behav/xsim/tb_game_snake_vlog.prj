@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../game-snake.srcs/sources_1/new/game_snake.sv" \
+"../../../../game-snake.srcs/sim_1/new/tb_game_snake.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

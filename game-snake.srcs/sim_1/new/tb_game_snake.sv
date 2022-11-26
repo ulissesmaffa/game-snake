@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 26.11.2022 11:25:07
+// Create Date: 26.11.2022 11:33:45
 // Design Name: 
-// Module Name: game_snake
+// Module Name: tb_game_snake
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module game_snake(
-    input logic rst,
-    input logic clk,
-    input logic buttons
-);
+module tb_game_snake();
+    logic rst=1'b1;
+    logic clk=1'b0;
+    logic buttons=1'b0;
+
+    game_snake game_snake (.*);
+    
+    always #5ns clk = ~clk; 
 endmodule

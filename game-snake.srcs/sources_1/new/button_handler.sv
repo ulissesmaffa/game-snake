@@ -20,9 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module game_snake(
-    input logic rst,
-    input logic clk,
-    input logic buttons
-);
+module button_handler(
+
+    );
 endmodule

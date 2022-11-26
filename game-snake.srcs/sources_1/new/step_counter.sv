@@ -5,7 +5,7 @@
 // 
 // Create Date: 26.11.2022 11:25:07
 // Design Name: 
-// Module Name: game_snake
+// Module Name: step_counter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module game_snake(
-    input logic rst,
-    input logic clk,
-    input logic buttons
-);
+module step_counter(
+
+    );
 endmodule
