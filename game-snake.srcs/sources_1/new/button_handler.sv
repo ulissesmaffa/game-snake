@@ -20,13 +20,67 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module button_handler(
-    input logic rst,
+module button_handler
+import game_snake_pkg::*;
+(
+    input logic rst_n,
     input logic clk,
     input logic [3:0] buttons,
-    input logic direction_sync,
-    input logic cnt_rdy
-    );
-    
-    
+    input logic cnt_rdy,
+    output decoded_direction_type  direction_sync
+);
+
+    decoded_direction_type press_direction;
+
+always @(negedge rst_n) begin
+    if (~rst_n) begin
+        direction_sync <= D_RIGHT;
+    end
+end
+
+//D_UP = BTNU<M18>
+//D_DOWN = BTND<P18>
+//D_RIGHT = BTNR<M17>
+//D_LEFT = BTNL<P17>
+always_ff @(buttons) begin
+    case (buttons) 
+        4'b0001: begin
+            press_direction <= D_UP;
+        end
+        4'b0010: begin
+            press_direction <= D_RIGHT;
+        end
+        4'b0100: begin
+            press_direction <= D_LEFT;
+        end 
+        4'b1000: begin
+            press_direction <= D_DOWN;
+        end
+    endcase
+end
+
+always @(posedge cnt_rdy) begin
+    case(direction_sync)
+        D_RIGHT: begin
+            if(press_direction == D_LEFT) direction_sync <= D_RIGHT;
+            else direction_sync <= press_direction;
+        end
+        
+        D_LEFT: begin
+            if(press_direction == D_RIGHT) direction_sync <= D_LEFT;
+            else direction_sync <= press_direction;
+        end
+        
+        D_UP: begin
+            if(press_direction == D_DOWN) direction_sync <= D_UP;
+            else direction_sync <= press_direction;
+        end
+        
+        D_DOWN: begin
+            if(press_direction == D_UP) direction_sync <= D_DOWN;
+            else direction_sync <= press_direction;
+        end
+    endcase
+end
+
 endmodule

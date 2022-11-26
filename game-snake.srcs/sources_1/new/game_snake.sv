@@ -20,22 +20,30 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module game_snake(
-    input logic rst,
+module game_snake
+import game_snake_pkg::*;
+(
+    input logic rst_n,
     input logic clk,
     input logic [3:0] buttons
-    );
+);
 
 
-    logic direction_sync_s;
+    decoded_direction_type direction_sync_s;
     logic cnt_rdy_s;
     
     button_handler button_handler_i(
-        .rst(rst),
+        .rst_n(rst_n),
         .clk(clk),
         .direction_sync(direction_sync_s),
         .cnt_rdy(cnt_rdy_s),
         .buttons(buttons)
+    );
+    
+    step_counter step_counter_i(
+        .rst_n(rst_n),
+        .clk(clk),
+        .cnt_rdy(cnt_rdy_s)
     );
     
 endmodule

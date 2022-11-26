@@ -1,11 +1,10 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date: 26.11.2022 11:33:45
+// Create Date: 26.11.2022 13:19:25
 // Design Name: 
-// Module Name: tb_game_snake
+// Module Name: game_snake_pkg
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,21 +18,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module tb_game_snake();
-    logic rst_n=1'b1;
-    logic clk=1'b0;
-    logic buttons=1'b0;
-
-    game_snake game_snake (.*);
-    
-    always #5ns clk = ~clk; 
-    
-    always #10ns if(rst_n) rst_n <= 1'b0;
-    
-    initial begin
-        #100ns;
-        buttons <= 4'b0001;
-    end
-    
-endmodule
+package game_snake_pkg;
+    typedef enum  logic [1:0] {
+        D_UP, 
+        D_LEFT,
+        D_RIGHT,
+        D_DOWN
+    } decoded_direction_type;
+endpackage
