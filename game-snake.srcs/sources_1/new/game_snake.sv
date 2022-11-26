@@ -23,6 +23,19 @@
 module game_snake(
     input logic rst,
     input logic clk,
-    input logic buttons
-);
+    input logic [3:0] buttons
+    );
+
+
+    logic direction_sync_s;
+    logic cnt_rdy_s;
+    
+    button_handler button_handler_i(
+        .rst(rst),
+        .clk(clk),
+        .direction_sync(direction_sync_s),
+        .cnt_rdy(cnt_rdy_s),
+        .buttons(buttons)
+    );
+    
 endmodule

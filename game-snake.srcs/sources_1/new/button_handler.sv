@@ -21,6 +21,12 @@
 
 
 module button_handler(
-
+    input logic rst,
+    input logic clk,
+    input logic [3:0] buttons,
+    input logic direction_sync,
+    input logic cnt_rdy
     );
+    
+    
 endmodule
