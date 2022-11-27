@@ -32,7 +32,7 @@ import game_snake_pkg::*;
 
     decoded_direction_type press_direction;
 
-always @(negedge rst_n) begin
+always @(posedge clk) begin
     if (~rst_n) begin
         direction_sync <= D_RIGHT;
     end 

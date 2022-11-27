@@ -28,13 +28,20 @@ module step_counter
 );
 
 //1s = 200000000 clk
-    logic [27:0] count;
+    logic [7:0] count;
 
-always_ff @(posedge clk) begin
+always @(posedge clk) begin
     if (~rst_n) begin
         count <= 'd0;
     end else begin
-        count <= count +1;
+        if(count == 'd10) begin
+            count <= 'd0;
+            cnt_rdy <= 'd1;
+        end
+        else begin
+            count <= count +1;
+            cnt_rdy <= 'd0;
+        end
     end
     
 end

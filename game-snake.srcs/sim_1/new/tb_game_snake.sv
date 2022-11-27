@@ -21,16 +21,15 @@
 
 
 module tb_game_snake();
-    logic rst_n=1'b1;
+    logic rst_n=1'b0;
     logic clk=1'b0;
     logic [3:0] buttons='d0;      
 
-    game_snake game_snake (.*);
-    
+    game_snake game_snake (.*);    
     
     always #5ns clk = ~clk; 
     
-    always #10ns if(rst_n) rst_n <= 1'b0;
+    always #10ns if(~rst_n) rst_n <= 1'b1;
     
     initial begin
         #20ns;
