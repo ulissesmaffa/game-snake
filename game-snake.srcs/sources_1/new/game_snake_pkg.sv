@@ -36,11 +36,29 @@ package game_snake_pkg;
         HEAD_RIGHT =  8'b0000_1101 
     } code_gen_type;
 
+    typedef enum logic [1:0] {
+        BODY,
+        FOOD,
+        BLANK 
+    } comparator_type;
+
     typedef struct packed {
-        logic signal_1;
+        comparator_type comparator_signal;
+        logic reg_bank_signal_x_finish;
+        logic reg_bank_signal_y_finish;
+        logic reg_bank_signal_write_head_finish;
+        logic food_num_gen_finish;
+        logic new_position_finish;
+        logic pop_write_tail_finish;
     } dp_flag_type;
 
     typedef struct packed {
-        logic signal_2;
+        logic fsm_init_signal_x_start;
+        logic fsm_init_signal_write_head;
+        logic fsm_food_signal_num_gen;
+        logic fsm_food_signal_add_x;
+        logic fsm_food_signal_add_y;
+        logic fsm_step_signal_reg_bank;
+        logic fsm_food_pop_write_tail;
     } dp_ctrl_type;
 endpackage
