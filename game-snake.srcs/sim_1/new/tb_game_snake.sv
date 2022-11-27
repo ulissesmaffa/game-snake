@@ -23,7 +23,7 @@
 module tb_game_snake();
     logic rst_n=1'b1;
     logic clk=1'b0;
-    logic buttons=1'b0;
+    logic [3:0] buttons='d0;
 
     game_snake game_snake (.*);
     
@@ -32,8 +32,12 @@ module tb_game_snake();
     always #10ns if(rst_n) rst_n <= 1'b0;
     
     initial begin
-        #100ns;
+        #20ns;
         buttons <= 4'b0001;
+        #40ns;
+        buttons <= 4'b0100;
+        #60ns;
+        buttons <= 4'b0101;
     end
     
 endmodule

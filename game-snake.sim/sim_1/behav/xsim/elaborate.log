@@ -4,6 +4,24 @@ Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'buttons' [C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sim_1/new/tb_game_snake.sv:28]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sim_1/new/tb_game_snake.sv" Line 23. Module tb_game_snake has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sources_1/new/game_snake.sv" Line 23. Module game_snake has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sources_1/new/button_handler.sv" Line 23. Module button_handler has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sources_1/new/step_counter.sv" Line 23. Module step_counter has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sim_1/new/tb_game_snake.sv" Line 23. Module tb_game_snake has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sources_1/new/game_snake.sv" Line 23. Module game_snake has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sources_1/new/button_handler.sv" Line 23. Module button_handler has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.srcs/sources_1/new/step_counter.sv" Line 23. Module step_counter has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/umaff/Documents/Vivado/game-snake/game-snake.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.game_snake_pkg
+Compiling module xil_defaultlib.button_handler
+Compiling module xil_defaultlib.step_counter
+Compiling module xil_defaultlib.game_snake
+Compiling module xil_defaultlib.tb_game_snake
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_game_snake_behav

@@ -35,25 +35,21 @@ import game_snake_pkg::*;
 always @(negedge rst_n) begin
     if (~rst_n) begin
         direction_sync <= D_RIGHT;
-    end
+    end 
 end
 
-//D_UP = BTNU<M18>
-//D_DOWN = BTND<P18>
-//D_RIGHT = BTNR<M17>
-//D_LEFT = BTNL<P17>
-always_ff @(buttons) begin
+always @(buttons) begin
     case (buttons) 
-        4'b0001: begin
+        4'bzzz1: begin
             press_direction <= D_UP;
         end
-        4'b0010: begin
+        4'bzz1z: begin
             press_direction <= D_RIGHT;
         end
-        4'b0100: begin
+        4'bz1zz: begin
             press_direction <= D_LEFT;
         end 
-        4'b1000: begin
+        4'b1zzzz: begin
             press_direction <= D_DOWN;
         end
     endcase
