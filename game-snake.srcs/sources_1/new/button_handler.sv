@@ -40,16 +40,16 @@ end
 
 always @(buttons) begin
     case (buttons) 
-        4'bzzz1: begin
+        4'b0001: begin
             press_direction <= D_UP;
         end
-        4'bzz1z: begin
+        4'b0010: begin
             press_direction <= D_RIGHT;
         end
-        4'bz1zz: begin
+        4'b0100: begin
             press_direction <= D_LEFT;
         end 
-        4'b1zzzz: begin
+        4'b1000: begin
             press_direction <= D_DOWN;
         end
     endcase

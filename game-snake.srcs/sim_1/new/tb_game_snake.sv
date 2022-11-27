@@ -33,11 +33,17 @@ module tb_game_snake();
     
     initial begin
         #20ns;
-        buttons <= 4'b0001;
+        buttons <= 4'b0001; //up
         #40ns;
-        buttons <= 4'b0100;
+        buttons <= 4'b0100; //left
         #60ns;
-        buttons <= 4'b0101;
+        buttons <= 4'b0101; //left + up
+        #20ns;
+        buttons <= 4'b0100; //left
+        #20ns;
+        buttons <= 4'b0010; //right
+        #20ns;
+        buttons <= 4'b1000; //down
     end
     
 endmodule
