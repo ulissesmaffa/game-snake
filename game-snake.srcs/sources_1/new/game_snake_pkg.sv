@@ -25,4 +25,22 @@ package game_snake_pkg;
         D_RIGHT,
         D_DOWN
     } decoded_direction_type;
+
+    typedef enum logic [7:0] {
+        BLANK      =  8'b0000_0000,
+        FOOD       =  8'b1000_0000,
+        BODY       =  8'b0000_1000,
+        HEAD_UP    =  8'b0000_1001,
+        HEAD_DOWN  =  8'b0000_1010,
+        HEAD_LEFT  =  8'b0000_1100,
+        HEAD_RIGHT =  8'b0000_1101 
+    } code_gen_type;
+
+    typedef struct packed {
+        logic signal_1;
+    } dp_flag_type;
+
+    typedef struct packed {
+        logic signal_2;
+    } dp_ctrl_type;
 endpackage

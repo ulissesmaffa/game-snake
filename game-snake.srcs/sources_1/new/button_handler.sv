@@ -52,6 +52,9 @@ always @(buttons) begin
         4'b1000: begin
             press_direction <= D_DOWN;
         end
+        default: begin
+            press_direction <= direction_sync;
+        end
     endcase
 end
 
