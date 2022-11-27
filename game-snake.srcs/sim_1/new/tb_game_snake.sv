@@ -23,9 +23,10 @@
 module tb_game_snake();
     logic rst_n=1'b1;
     logic clk=1'b0;
-    logic [3:0] buttons='d0;
+    logic [3:0] buttons='d0;      
 
     game_snake game_snake (.*);
+    
     
     always #5ns clk = ~clk; 
     

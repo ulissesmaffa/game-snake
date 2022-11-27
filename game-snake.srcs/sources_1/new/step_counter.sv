@@ -21,7 +21,6 @@
 
 
 module step_counter
-import game_snake_pkg::*;
 (
     input logic rst_n,
     input logic clk,
@@ -29,13 +28,23 @@ import game_snake_pkg::*;
 );
 
 //1s = 200000000 clk
-    integer count;
+    logic [27:0] count;
+
+always_ff @(posedge clk) begin
+    if (~rst_n) begin
+        count <= 'd0;
+    end else begin
+        count <= count +1;
+    end
+    
+end
 
 
-always @(posedge clk) begin
-    if(~rst_n) count <='d0;
-    else begin
-        if(count == 'd200000000) begin
+/*always @(posedge clk) begin
+    if(~rst_n) begin
+        count <='d0;
+    end else begin
+        if(count == 'd10) begin
             count <= 'd0;
             cnt_rdy <= 'd1;
         end
@@ -44,6 +53,6 @@ always @(posedge clk) begin
             cnt_rdy <= 'd0;
         end
     end 
-end
+end*/
 
 endmodule
