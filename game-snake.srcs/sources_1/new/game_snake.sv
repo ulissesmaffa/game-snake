@@ -31,8 +31,8 @@ import game_snake_pkg::*;
 
     decoded_direction_type direction_sync_s;
     logic cnt_rdy_s;
-    logic dp_ctrl_s;
-    logic dp_flag_s;
+
+    control_snake_if ctrl();
     
     button_handler button_handler_i(
         .rst_n(rst_n),
@@ -51,15 +51,13 @@ import game_snake_pkg::*;
     datapath datapath_i(
         .rst_n(rst_n),
         .clk(clk),
-        .dp_ctrl(dp_ctrl_s),
-        .dp_flag(dp_flag_s)
+        .ctrl(ctrl)
     );
 
     control_snake control_snake_i(
         .rst_n(rst_n),
         .clk(clk),
-        .dp_ctrl(dp_ctrl_s),
-        .dp_flag(dp_flag_s),
+        .ctrl(ctrl),
         .direction_sync(direction_sync_s),
         .cnt_rdy(cnt_rdy_s)
     );
