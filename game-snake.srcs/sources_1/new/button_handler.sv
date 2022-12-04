@@ -23,63 +23,87 @@
 module button_handler
 import game_snake_pkg::*;
 (
-    input logic rst_n,
-    input logic clk,
-    input logic [3:0] buttons,
-    input logic cnt_rdy,
-    output decoded_direction_type  direction_sync
+    input  logic       clk,             
+    input  logic       rst_n,           
+    input  logic       load_regs,       
+    input  logic [3:0] sys_direction,   
+    input  logic       sys_step_jumper, 
+    output direction   direction_sync,
+    output logic       step_jumper_sync
 );
 
-    decoded_direction_type press_direction;
+    direction sys_direction_s, direction_sync_s;
 
-always @(posedge clk) begin
-    if (~rst_n) begin
-        direction_sync <= D_RIGHT;
-    end 
-end
+    assign direction_sync = direction_sync_s;
 
-always @(buttons) begin
-    case (buttons) 
-        4'b0001: begin
-            press_direction <= D_UP;
-        end
-        4'b0010: begin
-            press_direction <= D_RIGHT;
-        end
-        4'b0100: begin
-            press_direction <= D_LEFT;
-        end 
-        4'b1000: begin
-            press_direction <= D_DOWN;
-        end
-        default: begin
-            press_direction <= direction_sync;
-        end
-    endcase
-end
+    always @(sys_direction) begin
+        case (sys_direction)
+            4'b0001: begin
+                sys_direction_s <= S_RIGHT;
+            end
 
-always @(posedge cnt_rdy) begin
-    case(direction_sync)
-        D_RIGHT: begin
-            if(press_direction == D_LEFT) direction_sync <= D_RIGHT;
-            else direction_sync <= press_direction;
+            4'b0010: begin
+                sys_direction_s <= S_LEFT;
+            end
+
+            4'b0100: begin
+                sys_direction_s <= S_UP;
+            end
+
+            4'b1000: begin
+                sys_direction_s <= S_DOWN;
+            end
+
+            default: begin 
+                sys_direction_s <= direction_sync_s;
+            end
+        endcase
+    end
+
+    always @(posedge clk) begin
+        if (~rst_n) begin
+            direction_sync_s <= S_RIGHT;
+            step_jumper_sync <= 'd0;
         end
-        
-        D_LEFT: begin
-            if(press_direction == D_RIGHT) direction_sync <= D_LEFT;
-            else direction_sync <= press_direction;
+        else if (load_regs) begin
+            if (direction_sync_s == S_RIGHT) begin
+                if (sys_direction_s == S_LEFT) begin
+                    direction_sync_s <= direction_sync_s;
+                end
+                else begin
+                    direction_sync_s <= sys_direction_s;
+                end
+            end
+
+            if (direction_sync_s == S_LEFT) begin
+                if (sys_direction_s == S_RIGHT) begin
+                    direction_sync_s <= direction_sync_s;
+                end
+                else begin
+                    direction_sync_s <= sys_direction_s;
+                end
+            end
+
+            if (direction_sync_s == S_DOWN) begin
+                if (sys_direction_s == S_UP) begin
+                    direction_sync_s <= direction_sync_s;
+                end
+                else begin
+                    direction_sync_s <= sys_direction_s;
+                end
+            end
+
+            if (direction_sync_s == S_UP) begin
+                if (sys_direction_s == S_DOWN) begin
+                    direction_sync_s <= direction_sync_s;
+                end
+                else begin
+                    direction_sync_s <= sys_direction_s;
+                end
+            end
+
+            step_jumper_sync <= sys_step_jumper;
         end
-        
-        D_UP: begin
-            if(press_direction == D_DOWN) direction_sync <= D_UP;
-            else direction_sync <= press_direction;
-        end
-        
-        D_DOWN: begin
-            if(press_direction == D_UP) direction_sync <= D_DOWN;
-            else direction_sync <= press_direction;
-        end
-    endcase
-end
+    end
 
 endmodule
