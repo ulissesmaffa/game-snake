@@ -49,6 +49,10 @@ import game_snake_pkg::*;
     logic [5:0]       mem_a_addr_2;
     logic [7:0]       mem_a_data_r_s;
 
+    logic [7:0]       data_b_s='d0;
+    logic             wren_b_s='d0;
+    logic             byreena_a_s='d1;
+
     num_gen
     #(
         .WIDTH(WIDTH)
@@ -111,8 +115,23 @@ import game_snake_pkg::*;
         .mem_code_w(mem_a_data_w_s)
     );
 
-    // FALTA A MEMÓRIA
 
+    mem mem 
+    (
+        .clk(clk),
+        .clr(rst_n),
+        .data_a(mem_a_data_w_s),
+        .data_b(data_b_s),
+        .wren_a(ctrl_ctrl.mem_w_e),
+        .wren_b(wren_b_s),
+        .address_a(mem_a_addr_2),
+        .address_b(mem_b_addr),
+        .byreena_a(byreena_a_s),
+        .q_a(mem_a_read_s),
+        .q_b(mem_b_data)
+
+    );
+    
     comparator comparator
     (
         .mem_a_read(mem_a_read_s),

@@ -21,9 +21,14 @@
 
 
 module tb_game_snake();
-    logic rst_n=1'b0;
-    logic clk=1'b0;
-    logic [3:0] buttons='d0;      
+    logic       rst_n           = 1'b0;
+    logic       clk             = 1'b0;
+    logic [3:0] sys_direction   = 'd0;      
+    logic       sys_step_jumper = 'd0;
+    logic [5:0] test_mem_b_addr = '{default: 'd0};
+    logic       test_idle_state = 'd0;
+    logic       test_go_state   = 'd0;
+    logic [7:0] test_mem_b_data = '{default: 'd0};
 
     game_snake game_snake (.*);    
     
@@ -33,17 +38,17 @@ module tb_game_snake();
     
     initial begin
         #20ns;
-        buttons <= 4'b0001; //up
+        sys_direction <= 4'b0001; //up
         #40ns;
-        buttons <= 4'b0100; //left
+        sys_direction <= 4'b0100; //left
         #60ns;
-        buttons <= 4'b0101; //left + up
+        sys_direction <= 4'b0101; //left + up
         #20ns;
-        buttons <= 4'b0100; //left
+        sys_direction <= 4'b0100; //left
         #20ns;
-        buttons <= 4'b0010; //right
+        sys_direction <= 4'b0010; //right
         #20ns;
-        buttons <= 4'b1000; //down
+        sys_direction <= 4'b1000; //down
     end
     
 endmodule
