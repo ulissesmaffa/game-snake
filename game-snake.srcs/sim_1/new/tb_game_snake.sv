@@ -38,17 +38,25 @@ module tb_game_snake();
     
     initial begin
         #20ns;
-        sys_direction <= 4'b0001; //up
+        sys_direction <= 4'b0001; //right
         #40ns;
-        sys_direction <= 4'b0100; //left
+        sys_direction <= 4'b0100; //up
         #60ns;
-        sys_direction <= 4'b0101; //left + up
+        sys_direction <= 4'b0010; //left
         #20ns;
-        sys_direction <= 4'b0100; //left
+        sys_direction <= 4'b0100; //up
         #20ns;
-        sys_direction <= 4'b0010; //right
+        sys_direction <= 4'b0010; //left
         #20ns;
         sys_direction <= 4'b1000; //down
+        #20ns;
+        sys_direction <= 4'b0001; //right
+        #700ns;
+        sys_direction <= 4'b1000; //down
+        #100ns;
+        sys_direction <= 4'b0001; //right
+        #50ns;
+        sys_direction <= 4'b0100; //up
     end
     
 endmodule

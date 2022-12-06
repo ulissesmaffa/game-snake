@@ -39,11 +39,11 @@ import game_snake_pkg::*;
 
     logic [7:0][7:0][7:0] memory;
 
-    assign q_a = memory[address_a[2:0]][address_a[5:3]];
+    assign q_a = memory[address_a[5:3]][address_a[2:0]];
 
     always @(*) begin
         if(wren_a) begin
-            memory[address_a[2:0]][address_a[5:3]] <= data_a;
+            memory[address_a[5:3]][address_a[2:0]] <= data_a;
         end
     end
 
