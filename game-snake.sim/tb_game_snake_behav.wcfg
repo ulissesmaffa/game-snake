@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_game_snake_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="game_snake_pkg" />
+            <top_module name="glbl" />
+            <top_module name="tb_game_snake" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="651.020 ns"></ZoomStartTime>
+      <ZoomEndTime time="793.036 ns"></ZoomEndTime>
+      <Cursor1Time time="725.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="150"></NameColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="55" />
+   <wvobject fp_name="/tb_game_snake/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/sys_direction" type="array">
+      <obj_property name="ElementShortName">sys_direction[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sys_direction[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/sys_step_jumper" type="logic">
+      <obj_property name="ElementShortName">sys_step_jumper</obj_property>
+      <obj_property name="ObjectShortName">sys_step_jumper</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/test_mem_b_addr" type="array">
+      <obj_property name="ElementShortName">test_mem_b_addr[5:0]</obj_property>
+      <obj_property name="ObjectShortName">test_mem_b_addr[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/test_idle_state" type="logic">
+      <obj_property name="ElementShortName">test_idle_state</obj_property>
+      <obj_property name="ObjectShortName">test_idle_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/test_go_state" type="logic">
+      <obj_property name="ElementShortName">test_go_state</obj_property>
+      <obj_property name="ObjectShortName">test_go_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/test_mem_b_data" type="array">
+      <obj_property name="ElementShortName">test_mem_b_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">test_mem_b_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_main_i/STATE" type="array">
+      <obj_property name="ElementShortName">STATE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">STATE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/fsm_m_start" type="logic">
+      <obj_property name="ElementShortName">fsm_m_start</obj_property>
+      <obj_property name="ObjectShortName">fsm_m_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/ofc_of_x" type="logic">
+      <obj_property name="ElementShortName">ofc_of_x</obj_property>
+      <obj_property name="ObjectShortName">ofc_of_x</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/ofc_of_y" type="logic">
+      <obj_property name="ElementShortName">ofc_of_y</obj_property>
+      <obj_property name="ObjectShortName">ofc_of_y</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/dp_ctrl" type="array">
+      <obj_property name="ElementShortName">dp_ctrl</obj_property>
+      <obj_property name="ObjectShortName">dp_ctrl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/fsm_m_done" type="logic">
+      <obj_property name="ElementShortName">fsm_m_done</obj_property>
+      <obj_property name="ObjectShortName">fsm_m_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/STATE" type="array">
+      <obj_property name="ElementShortName">STATE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">STATE[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/NEXT_STATE" type="array">
+      <obj_property name="ElementShortName">NEXT_STATE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">NEXT_STATE[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/control_snake_i/fsm_init_i/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/overflow_correction/alu_result" type="array">
+      <obj_property name="ElementShortName">alu_result[7:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_result[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/overflow_correction/rb_result" type="array">
+      <obj_property name="ElementShortName">rb_result[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rb_result[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/overflow_correction/ctrl_of_x" type="logic">
+      <obj_property name="ElementShortName">ctrl_of_x</obj_property>
+      <obj_property name="ObjectShortName">ctrl_of_x</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/overflow_correction/ctrl_of_y" type="logic">
+      <obj_property name="ElementShortName">ctrl_of_y</obj_property>
+      <obj_property name="ObjectShortName">ctrl_of_y</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/overflow_correction/WIDTH" type="array">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/a_i" type="array">
+      <obj_property name="ElementShortName">a_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/b_i" type="array">
+      <obj_property name="ElementShortName">b_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/c_i" type="logic">
+      <obj_property name="ElementShortName">c_i</obj_property>
+      <obj_property name="ObjectShortName">c_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/z_o" type="array">
+      <obj_property name="ElementShortName">z_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">z_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/c_o" type="logic">
+      <obj_property name="ElementShortName">c_o</obj_property>
+      <obj_property name="ObjectShortName">c_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/cout_s" type="array">
+      <obj_property name="ElementShortName">cout_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cout_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/z_s" type="array">
+      <obj_property name="ElementShortName">z_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">z_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rc_adder/WIDTH" type="array">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/op_first" type="array">
+      <obj_property name="ElementShortName">op_first[7:0]</obj_property>
+      <obj_property name="ObjectShortName">op_first[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/rb_op" type="array">
+      <obj_property name="ElementShortName">rb_op[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rb_op[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/ctrl_x_y" type="logic">
+      <obj_property name="ElementShortName">ctrl_x_y</obj_property>
+      <obj_property name="ObjectShortName">ctrl_x_y</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/ctrl_pass_calc" type="logic">
+      <obj_property name="ElementShortName">ctrl_pass_calc</obj_property>
+      <obj_property name="ObjectShortName">ctrl_pass_calc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/ofc_result" type="array">
+      <obj_property name="ElementShortName">ofc_result[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ofc_result[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/shift_op_s" type="array">
+      <obj_property name="ElementShortName">shift_op_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_op_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/result_s" type="array">
+      <obj_property name="ElementShortName">result_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/carry_out_s" type="logic">
+      <obj_property name="ElementShortName">carry_out_s</obj_property>
+      <obj_property name="ObjectShortName">carry_out_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/alu/WIDTH" type="array">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/ofc_address" type="array">
+      <obj_property name="ElementShortName">ofc_address[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ofc_address[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/load_head" type="logic">
+      <obj_property name="ElementShortName">load_head</obj_property>
+      <obj_property name="ObjectShortName">load_head</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/load_reg2" type="logic">
+      <obj_property name="ElementShortName">load_reg2</obj_property>
+      <obj_property name="ObjectShortName">load_reg2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/load_fifo" type="logic">
+      <obj_property name="ElementShortName">load_fifo</obj_property>
+      <obj_property name="ObjectShortName">load_fifo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/fifo_pop" type="logic">
+      <obj_property name="ElementShortName">fifo_pop</obj_property>
+      <obj_property name="ObjectShortName">fifo_pop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/out_sel" type="array">
+      <obj_property name="ElementShortName">out_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">out_sel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/alu_out" type="array">
+      <obj_property name="ElementShortName">alu_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/head_out_s" type="array">
+      <obj_property name="ElementShortName">head_out_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">head_out_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/reg2_out_s" type="array">
+      <obj_property name="ElementShortName">reg2_out_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2_out_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/fifo_out_s" type="array">
+      <obj_property name="ElementShortName">fifo_out_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_out_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/fifo_empty" type="logic">
+      <obj_property name="ElementShortName">fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">fifo_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_game_snake/game_snake/datapath_i/reg_bank/WIDTH" type="array">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+</wave_config>

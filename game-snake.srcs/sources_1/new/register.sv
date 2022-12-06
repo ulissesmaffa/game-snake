@@ -15,8 +15,8 @@ module register
 
     assign q = q_s;
 
-    always @(posedge clk) begin
-        if (clr) begin
+    always_ff @(posedge clk) begin
+        if (~clr) begin
             q_s <= '{default: 'd0};
             q   <= '{default: 'd0};
         end

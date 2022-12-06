@@ -11,7 +11,15 @@ module overflow_correction
     output logic             ctrl_of_y
 );
 
-    assign rb_result = '{'b0, alu_result[6], alu_result[5], alu_result[4], 'b0, alu_result[2] , alu_result[1], alu_result[0]};
+    // assign rb_result = '{'b0, '{alu_result[6]}, '{alu_result[5]}, '{alu_result[4]}, '{alu_result[4]}, '{alu_result[2]}, '{alu_result[1]}, '{alu_result[0]}};
+    assign rb_result[7] = 'b0;
+    assign rb_result[6] = alu_result[6];
+    assign rb_result[5] = alu_result[5];
+    assign rb_result[4] = alu_result[4];
+    assign rb_result[3] = 'b0;
+    assign rb_result[2] = alu_result[2];
+    assign rb_result[1] = alu_result[1];
+    assign rb_result[0] = alu_result[0];
 
     assign ctrl_of_y = alu_result[WIDTH - 1];
     assign ctrl_of_x = alu_result[WIDTH / 2 - 1];

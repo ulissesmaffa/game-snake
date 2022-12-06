@@ -96,7 +96,7 @@ import game_snake_pkg::*;
         .fsm_m_game_over(game_over_s)
     );
 
-    always @(select_fsm_s) begin
+    always_comb begin
         if (select_fsm_s == INIT_CON) begin
             dp_ctrl <= init_control_s;
         end

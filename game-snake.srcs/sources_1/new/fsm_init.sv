@@ -15,11 +15,12 @@ import game_snake_pkg::*;
     typedef enum logic[1:0] {
         READY, 
         RESET_ROW, 
-        JUMP_ROW, 
+        JUMP_ROW,
         WRITE_HEAD     
     } STATE_TYPE_INIT;
 
     STATE_TYPE_INIT STATE, NEXT_STATE;
+    integer i;
 
     always_ff @(posedge clk) begin
         if(rst_n) begin
@@ -52,8 +53,11 @@ import game_snake_pkg::*;
                 if (ofc_of_y) begin
                     NEXT_STATE <= WRITE_HEAD;
                 end
-                else begin
+                else if (~ofc_of_y) begin
                     NEXT_STATE <= RESET_ROW;
+                end
+                else begin
+                    NEXT_STATE <= JUMP_ROW;   
                 end
 
             WRITE_HEAD: begin 

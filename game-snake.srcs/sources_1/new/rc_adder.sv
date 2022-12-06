@@ -41,8 +41,9 @@ module rc_adder
         .b_in(b_i[WIDTH - 1]),
         .c_in(cout_s[WIDTH - 2]),
         .z_out(z_s[WIDTH - 1]),
-        .c_out(c_o)
+        .c_out(cout_s[WIDTH - 1])
     );
 
+    assign c_o = cout_s[WIDTH - 1];
     assign z_o = z_s;
 endmodule

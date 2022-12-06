@@ -34,8 +34,11 @@ module alu
         if(ctrl_x_y) begin
             shift_op_s <= $unsigned(op_first) << (WIDTH / 2);
         end
-        else begin
+        else if (~ctrl_x_y) begin
             shift_op_s <= $unsigned(op_first);
+        end 
+        else begin
+            shift_op_s <= 8'bXXXXXXXX;
         end
     end
 
@@ -43,8 +46,11 @@ module alu
         if(~ctrl_pass_calc) begin
             ofc_result <= rb_op;
         end
-        else begin
+        else if(ctrl_pass_calc) begin
             ofc_result <= result_s;
+        end 
+        else begin
+            ofc_result <= 8'bXXXXXXXX;
         end
     end
 

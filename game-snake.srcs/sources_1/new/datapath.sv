@@ -49,9 +49,9 @@ import game_snake_pkg::*;
     logic [5:0]       mem_a_addr_2;
     logic [7:0]       mem_a_data_r_s;
 
-    logic [7:0]       data_b_s='d0;
+    logic [7:0]       data_b_s='{default: 'b0};
     logic             wren_b_s='d0;
-    logic             byreena_a_s='d1;
+    integer i;
 
     num_gen
     #(
@@ -126,10 +126,9 @@ import game_snake_pkg::*;
         .wren_b(wren_b_s),
         .address_a(mem_a_addr_2),
         .address_b(mem_b_addr),
-        .byreena_a(byreena_a_s),
-        .q_a(mem_a_read_s),
+        .byreena_a(mem_a_en),
+        .q_a(mem_a_data_r_s),
         .q_b(mem_b_data)
-
     );
     
     comparator comparator
@@ -165,17 +164,17 @@ import game_snake_pkg::*;
         .q(mem_a_addr_2_s)
     );
 
-    assign mem_a_addr_s = ofc_2_rb_s[5:0];
+    assign mem_a_addr_s = '{ofc_2_rb_s[6],ofc_2_rb_s[5],ofc_2_rb_s[4],ofc_2_rb_s[2],ofc_2_rb_s[1],ofc_2_rb_s[0]};
 
     assign mem_a_en = 'd1;
 
-    always @(ctrl_ctrl.cg_sel, ctrl_ctrl.mem_w_e) begin
+    always_ff @(ctrl_ctrl.cg_sel, ctrl_ctrl.mem_w_e, clk) begin
         if (ctrl_ctrl.cg_sel == FOOD & ctrl_ctrl.mem_w_e) begin
             mem_a_addr_2 <= mem_a_addr_2_s;
         end
         else begin
             mem_a_addr_2 <= mem_a_addr_s;
-        end;
+        end
     end;
 
 
